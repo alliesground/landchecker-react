@@ -3,6 +3,8 @@ import Map from './components/MapContainer';
 import { useEffect, useState } from 'react';
 import PropertyDetails from './components/PropertyDetails';
 
+import TestContainer from './components/TestContainer';
+
 const App = () => {
 
   const API_URL = 'http://localhost:3000/api/v1';
@@ -35,7 +37,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    getProperties();
+    // getProperties();
   }, [])
 
   async function getProperties() {
@@ -71,16 +73,22 @@ const App = () => {
 
   return (
     <div className="App">
-      <Map 
-        properties={properties}
-        onMarkerClick={handleMarkerClick}
-      />
+      
+      <TestContainer />
+    {
+      /*
+        <Map 
+          properties={properties}
+          onMarkerClick={handleMarkerClick}
+        />
 
-      <PropertyDetails 
-        property={property}
-        onClosePropertyDetailsView={handleClosePropertyDetailsView}
-        propertyDetailsView={propertyDetailsView}
-      />
+        <PropertyDetails 
+          property={property}
+          onClosePropertyDetailsView={handleClosePropertyDetailsView}
+          propertyDetailsView={propertyDetailsView}
+        />
+      */
+    }
     </div>
   );
 }
